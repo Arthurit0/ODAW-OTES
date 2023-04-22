@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+      }
+    </style> -->
+    <title>Título da Página</title>
+  </head>
+  <body>
+    <h1>Listas</h1>
+
+    <h2>De definição</h2>
+
+    <dl>
+      No começo
+      <dt>Havia algo</dt>
+      <dd>Para a direita</dd>
+      <dd>
+        <dl>
+          E um pouco
+          <dd>mais a direita</dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <h2>Não ordenada / bullet points</h2>
+
+    <ul>
+      <li>Bolinha preta 1</li>
+      <li>
+        Bolinha Preta 2
+        <ul>
+          <li>
+            Bolinha Branca
+            <ul>
+              <li>
+                Quadrado Preto
+                <ul>
+                  <li>Outro Quadrado Preto</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li type="circle">Bolinha Branca de novo</li>
+    </ul>
+
+    <h2>Ordenada / numerada</h2>
+    <ol>
+      <li>Primeiro</li>
+      <li>
+        Segundo
+        <ol>
+          <li type="a">Primeiro filho do segundo</li>
+          <li type="a">
+            Segundo filho do segundo
+            <ol start="3" type="i">
+              <li>Primeiro neto do segundo</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+
+      <li>Terceiro</li>
+    </ol>
+
+    <h1>Tabela</h1>
+
+    <table width="80%" border align="center" style="text-align: center">
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Profissão</th>
+      </tr>
+      <tr>
+        <td>Pedro</td>
+        <td>22</td>
+        <td>Programador</td>
+      </tr>
+      <tr>
+        <td>João</td>
+        <td>25</td>
+        <td>Tech Lead</td>
+      </tr>
+      <tr>
+        <td>Marcos</td>
+        <td>21</td>
+        <td>Programador</td>
+      </tr>
+    </table>
+
+    <h1>Formulário</h1>
+    <form name="Formulario">
+      <div>
+        <label for="name">Nome</label>
+        <input id="name" />
+
+        <div>
+          <label for="email">E-mail</label>
+          <input id="email" />
+        </div>
+
+        <div>
+          <label for="birthday">Data de Nascimento</label>
+          <input type="date" id="birthday" />
+        </div>
+
+        <div>
+          <label for="state">Estado</label>
+          <select id="state">
+            <option>SC</option>
+            <option>SP</option>
+            <option>PR</option>
+            <option>RS</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Sexo</label>
+          <input type="radio" id="masc" name="gender" />
+          <label for="masc">Masculino</label>
+          <input type="radio" id="fem" name="gender" />
+          <label for="fem">Feminino</label>
+        </div>
+
+        <div>
+          <label for="active">Usuário ativo?</label>
+          <input type="checkbox" id="active" />
+          <label for="active">Ativo</label>
+        </div>
+
+        <div>
+          <input type="submit" id="submit" value="Enviar" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

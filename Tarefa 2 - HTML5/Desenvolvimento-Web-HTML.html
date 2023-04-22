@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+      }
+    </style> -->
+    <title>Título da Página</title>
+  </head>
+  <body>
+    <header
+      style="
+        font-size: 4em;
+        text-align: center;
+        font-weight: bold;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin-bottom: 25px;
+      "
+    >
+      Exercício de HTML
+    </header>
+    <section
+      style="
+        background-color: rgb(180, 135, 223);
+        padding: 1em;
+        margin-bottom: 0em 1em 1em 1em;
+        border: 6px solid rgb(0, 0, 0);
+      "
+    >
+      <h1 style="text-align: center; font-size: 3em; margin: 1px 0 10px 0">
+        Listas
+      </h1>
+
+      <section
+        style="
+          background-color: rgb(211, 228, 228);
+          padding: 1em;
+          border: 4px solid rgb(0, 0, 0);
+          margin-bottom: 1em;
+        "
+      >
+        <h2>De Definição</h2>
+
+        <dl>
+          No começo
+          <dt>Havia algo</dt>
+          <dd>Para a direita</dd>
+          <dd>
+            <dl>
+              E um pouco
+              <dd>mais a direita</dd>
+            </dl>
+          </dd>
+        </dl>
+      </section>
+      <section
+        style="
+          background-color: rgb(228, 211, 211);
+          padding: 1em;
+          border: 4px solid rgb(0, 0, 0);
+          margin-bottom: 1em;
+        "
+      >
+        <h2>Não ordenada / bullet points</h2>
+
+        <ul>
+          <li>Bolinha preta 1</li>
+          <li>
+            Bolinha Preta 2
+            <ul>
+              <li>
+                Bolinha Branca
+                <ul>
+                  <li>
+                    Quadrado Preto
+                    <ul>
+                      <li>Outro Quadrado Preto</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li type="circle">Bolinha Branca de novo</li>
+        </ul>
+      </section>
+      <section
+        style="
+          background-color: rgb(214, 228, 211);
+          padding: 1em;
+          border: 4px solid rgb(0, 0, 0);
+          margin-bottom: 1em;
+        "
+      >
+        <h2>Ordenada / numerada</h2>
+        <ol>
+          <li>Primeiro</li>
+          <li>
+            Segundo
+            <ol>
+              <li type="a">Primeiro filho do segundo</li>
+              <li type="a">
+                Segundo filho do segundo
+                <ol start="3" type="i">
+                  <li>Primeiro neto do segundo</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+
+          <li>Terceiro</li>
+        </ol>
+      </section>
+    </section>
+
+    <section
+      style="
+        background-color: rgb(243, 227, 158);
+        padding: 1em 1px 2em 2em;
+        border: 4px solid rgb(0, 0, 0);
+        margin-bottom: 1em;
+      "
+    >
+      <h1>Tabela</h1>
+
+      <table width="80%" border align="center" style="text-align: center">
+        <tr>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Profissão</th>
+        </tr>
+        <tr>
+          <td>Pedro</td>
+          <td>22</td>
+          <td>Programador</td>
+        </tr>
+        <tr>
+          <td>João</td>
+          <td>25</td>
+          <td>Tech Lead</td>
+        </tr>
+        <tr>
+          <td>Marcos</td>
+          <td>21</td>
+          <td>Programador</td>
+        </tr>
+      </table>
+    </section>
+    <section
+      style="
+        background-color: rgb(199, 251, 255);
+        padding: 1em;
+        border: 4px solid rgb(0, 0, 0);
+        margin-bottom: 1em;
+      "
+    >
+      <h1>Formulário</h1>
+      <form name="Formulario">
+        <div>
+          <label for="name">Nome</label>
+          <input id="name" placeholder="Escreva seu nome" required />
+        </div>
+
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Digite seu e-mail" />
+        </div>
+
+        <div>
+          <label for="birthday">Data de Nascimento</label>
+          <input type="date" id="birthday" required />
+        </div>
+
+        <div>
+          <label for="state">Estado</label>
+          <select id="state">
+            <option>SC</option>
+            <option>SP</option>
+            <option>PR</option>
+            <option>RS</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Sexo</label>
+          <input type="radio" id="masc" name="gender" />
+          <label for="masc">Masculino</label>
+          <input type="radio" id="fem" name="gender" />
+          <label for="fem">Feminino</label>
+        </div>
+
+        <div>
+          <label for="active">Usuário ativo?</label>
+          <input type="checkbox" id="active" />
+          <label for="active">Ativo</label>
+        </div>
+
+        <div>
+          <label for="peso">Nível de Satisfação</label>
+          <input
+            type="range"
+            name="Nível de Satisfação"
+            id=""
+            min="1"
+            max="5"
+            value="3"
+          />
+        </div>
+
+        <div>
+          <input type="submit" id="submit" value="Enviar" />
+        </div>
+      </form>
+    </section>
+
+    <section
+      style="
+        background-color: rgb(255, 96, 96);
+        padding: 1em;
+        border: 4px solid rgb(0, 0, 0);
+        margin-bottom: 1em;
+      "
+    >
+      <h1>Vídeo no Youtube:</h1>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/TURbeWK2wwg"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <section
+      style="
+        background-color: rgb(96, 120, 255);
+        padding: 1em;
+        border: 4px solid rgb(0, 0, 0);
+        margin-bottom: 1em;
+      "
+    >
+      <h1>Tag de Vídeo</h1>
+      <video src="video.mp4" width="560" height="315" controls></video>
+    </section>
+
+    <section
+      style="
+        background-color: rgb(255, 231, 96);
+        padding: 1em;
+        border: 4px solid rgb(0, 0, 0);
+        margin-bottom: 1em;
+      "
+    >
+      <h1>Tag de Áudio</h1>
+      <audio src="Audio.ogg" controls></audio>
+    </section>
+  </body>
+</html>
