@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Tarefa Javascript 7</title>
+    </head>
+    <body>
+        <header class="display-4 text-center">Tarefa de Javascript 7</header>
+
+        <section class="container p-3 my-3 bg-success text-light">
+            <h2>O que implementei?</h2>
+            <ol>
+                <li>Verificação de valores por Javascript</li>
+                <li>Botão de Reset</li>
+                <li>Click na célula da tabela</li>
+                <li>Confirmação de envio via Prompt</li>
+                <li>Soma de todas as idades da tabela</li>
+            </ol>
+        </section>
+
+        <section class="container p-3 my-3 bg-primary">
+            <h1 class="display-4 text-center">Tabela</h1>
+            <table
+                class="table bg-light table-bordered table-hover"
+                id="tabela"
+            >
+                <thead>
+                    <tr class="thead-dark">
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Profissão</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Pedro</td>
+                        <td>22</td>
+                        <td>Programador</td>
+                    </tr>
+                    <tr>
+                        <td>João</td>
+                        <td>25</td>
+                        <td>Tech Lead</td>
+                    </tr>
+                    <tr>
+                        <td>Marcos</td>
+                        <td>21</td>
+                        <td>Programador</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-secondary" onclick="somarIdades()">
+                Somar Idades
+            </button>
+        </section>
+
+        <section class="container p-3 my-3 bg-secondary">
+            <h1 class="display-4 text-center">Formulário</h1>
+
+            <form name="form2" onsubmit="return checkValues()">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nome</span>
+                    </div>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="John Doe"
+                        name="nome"
+                    />
+                </div>
+
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Seu Email Google"
+                        name="email"
+                    />
+                    <div class="input-group-append">
+                        <span class="input-group-text">@example.com</span>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Nome</span>
+                    </div>
+                    <input type="date" id="birthday" name="data" />
+                </div>
+
+                <div>
+                    <label for="state">Estado</label>
+                    <select name="cidade" id="state">
+                        <option value="0">Selecione uma cidade</option>
+                        <option value="1">Santa Catarina</option>
+                        <option value="2">São Paulo</option>
+                        <option value="3">Paraná</option>
+                        <option value="4">Rio Grande do Sul</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Sexo</label>
+                    <input type="radio" id="masc" name="sexo" />
+                    <label for="masc">Masculino</label>
+                    <input type="radio" id="fem" name="sexo" />
+                    <label for="fem">Feminino</label>
+                </div>
+
+                <div>
+                    <label for="active">Usuário ativo?</label>
+                    <input
+                        type="checkbox"
+                        id="active"
+                        value="false"
+                        name="ativo"
+                    />
+                    <label for="active">Ativo</label>
+                </div>
+
+                <div>
+                    <label for="peso">Nível de Satisfação</label>
+                    <input type="range" name="satisf" id="" min="1" max="5" />
+                </div>
+
+                <div>
+                    <button class="btn btn-success mb-2" type="submit">
+                        Enviar
+                    </button>
+                </div>
+
+                <div>
+                    <button type="reset" class="btn btn-danger">Resetar</button>
+                </div>
+            </form>
+
+            <script>
+                const tabela = document.getElementById('tabela');
+
+                tabela.addEventListener('click', function (evt) {
+                    if (
+                        event.target.tagName === 'TD' &&
+                        event.target.parentElement.tagName === 'TR'
+                    ) {
+                        let line = event.target.parentElement;
+                        let celulas = line.cells;
+                        let nome = celulas[0].textContent;
+                        let idade = celulas[1].textContent;
+                        let profis = celulas[2].textContent;
+
+                        alert(
+                            'O nome é ' +
+                                nome +
+                                ', ele tem ' +
+                                idade +
+                                ' anos e trabalha como ' +
+                                profis
+                        );
+                    }
+                });
+
+                function checkValues() {
+                    // e.preventDefault();
+                    let form = document.form2;
+                    let nome = form.nome.value;
+                    let email = form.email.value;
+                    let data = form.data.value;
+                    let cidade = form.cidade.value;
+                    let sexo = form.sexo.value;
+
+                    if (!nome.length) {
+                        alert('Nome inválido!');
+                        return false;
+                    }
+
+                    if (!(email.length && email.includes('@'))) {
+                        alert('Email inválido');
+                        return false;
+                    }
+
+                    if (!data.length) {
+                        alert('Data Inválida!');
+                        return false;
+                    }
+
+                    if (!parseInt(cidade)) {
+                        alert('Selecione uma cidade!');
+                        return false;
+                    }
+
+                    if (!sexo) {
+                        alert('Selecione um sexo!');
+                        return false;
+                    }
+
+                    let resposta = prompt(
+                        'Deseja mesmo enviar seu formulário? (S/N)'
+                    );
+
+                    if (resposta.toLowerCase() == 's') {
+                        alert('Sucesso!');
+                    } else {
+                        alert('Envio cancelado');
+                    }
+                }
+
+                function somarIdades() {
+                    let linhas = tabela
+                        .getElementsByTagName('tbody')[0]
+                        .getElementsByTagName('tr');
+
+                    let soma = 0;
+
+                    for (let i = 0; i < linhas.length; i++) {
+                        const idade = linhas[i].cells[1];
+
+                        soma += parseInt(idade.textContent);
+                    }
+
+                    alert('A soma de todas as idades é ' + soma);
+                }
+            </script>
+        </section>
+    </body>
+</html>
