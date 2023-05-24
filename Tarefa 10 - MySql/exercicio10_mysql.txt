@@ -1,0 +1,14 @@
+CREATE DATABASE exercicio_odaw;
+USE exercicio_odaw;
+CREATE TABLE exercicio_mysql(codigo int auto_increment primary key, nome char(15), idade int, birthday date);
+INSERT INTO exercicio_mysql(nome, idade, birthday) VALUES ('Arthur', 22, '2001-02-27');
+INSERT INTO exercicio_mysql(nome, idade, birthday) VALUES ('Nalanda', 20, '2003-11-22');
+INSERT INTO exercicio_mysql(nome, idade, birthday) VALUES ('John Doe', 30, '1993-01-01');
+SELECT * FROM exercicio_mysql;
+SELECT codigo, nome FROM exercicio_mysql WHERE idade = 22;
+UPDATE exercicio_mysql SET nome = 'Pedrinho' WHERE codigo = 3;
+SELECT * FROM exercicio_mysql;
+DELETE FROM exercicio_mysql WHERE idade = 30;
+SELECT * FROM exercicio_mysql;
+DROP TABLE exercicio_mysql;
+DROP DATABASE exercicio_odaw;
