@@ -6,6 +6,7 @@ $codigo = $_GET['codigo'];
 $nome = "";
 $email = "";
 $idade = "";
+$birthday = "";
 
 $link = mysqli_connect("localhost", "root", "arthur", "exercicio_odaw");
 
@@ -15,6 +16,7 @@ if ($row = mysqli_fetch_row($result)) {
 	$nome = $row[1];
 	$email = $row[2];
 	$idade = $row[3];
+	$birthday = $row[4];
 }
 
 mysqli_close($link);
@@ -24,8 +26,9 @@ echo "
 	<b>Alterar elemento codigo $codigo:<b><br><br>
 	<input type='hidden' name='codigo' value='$codigo'>
 	Nome: <input type='text' name='nome' value='$nome'><br>
-	Email: <input type='text' name='email' value='$email'><br>
+	Email: <input type='email' name='email' value='$email'><br>
 	Idade: <input type='number' name='idade' value='$idade'><br>
-	<input type='submit' name='adicionar' value='adicionar'>
+	Data de Nascimento: <input type='date' name='birthday' value='$birthday' /><br>
+	<input type='submit' name='Alterar' value='Alterar'>
 	</form><hr>
 ";
